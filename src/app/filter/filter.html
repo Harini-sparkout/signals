@@ -1,0 +1,9 @@
+<p>filter works!</p>
+<h2>computed using filter</h2>
+<input type="text" placeholder="searchname" (input)="searchtext.set($any($event.target).value)">
+<p><b>search:</b>{{searchtext()}}</p>
+<h3>filtered names:</h3>
+<ul>@for (name of filterednames();track name) {
+    <li>{{name}}</li>
+}
+</ul>

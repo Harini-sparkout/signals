@@ -1,0 +1,8 @@
+<h2>parent component</h2>
+<input type="text" (input)="username.set($any($event.target).value)" placeholder="enter name">
+ 
+<app-child [name]="username()" (namesent)="onnamesent($event)">
+
+</app-child>
+<p><b>send data from child:</b>{{receivedname()}}</p>
+
