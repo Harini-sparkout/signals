@@ -1,0 +1,15 @@
+<h2>login form</h2>
+<label>email:</label>
+<input [value]="email()" (input)="email.set($any($event.target).value)" (blur)="emailTouched.set(true)" placeholder="enter email">
+@if(emailTouched() && !isEmailValid()){
+<p style="color:red;">@ must be present</p>"
+
+}
+
+<label>password:</label>
+<input type="password" [value]="password()" (input)="password.set($any($event.target).value)" (blur)="passwordTouched.set(true)" placeholder="enter pasword">
+@if(passwordTouched() && !isPasswordValid()){
+    <p style="color:red;">nust be atleast 6 characters</p>
+
+}
+<button (click)="submit()">login</button>
