@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, computed, effect, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   standalone: true,
+  imports:[CommonModule,FormsModule],
   templateUrl: './form.html',
 })
 export class Form {
@@ -25,12 +28,9 @@ export class Form {
       alert("Please fill the required details");
       return;
     }
-    if(this.isFormValid()){
-      alert("please fill details");
-      return;
-    }
-    alert('logout successfully');
-    alert("Login Success");
+    
+    alert('login successfully');
+    
   this.email.set('');
     this.password.set('');
     this.emailTouched.set(false);
