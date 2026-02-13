@@ -1,13 +1,16 @@
 <h2>login form</h2>
 <form [formGroup]="form" (ngSubmit)="submit()">
+  <label>userid</label>
     <input formControlName="userid" placeholder="userid">
     @if(UseridError()){
         <p>useridError()</p>
     }
-    <input [type]="showPassword() ? 'text' : 'password' " formControlName="password" palceholder="password">
+  <label>password</label>
+    <input [type]="showPassword()" formControlName="password" placeholder="password">
     @if(PasswordError()){
         <p>{{PasswordError()}}</p>
     }
     <button type="submit" >submit</button>
 </form>
+
 
