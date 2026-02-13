@@ -1,4 +1,4 @@
-<h2>login form</h2>
+<h2>form validation</h2>
 <form (ngSubmit)="submit()"></form>
 <label>email:</label> 
 <input name="email" [(ngModel)]="email" (ngModelChange)="email.set($event)" [value]="email()"  placeholder ="enter email">
@@ -14,3 +14,4 @@
 
 }
 <button (click)="submit()">login</button>
+
