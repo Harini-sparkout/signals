@@ -1,12 +1,11 @@
-<p>reactive Forms using Angular</p>
-<label>userid</label>
-<input type="text" [value]="userid()" (input)="userid.set($any($event.target).value)" (blur)="onUseridBlur()">
-@if(UseridError()){
-    <p style="color:red">{{UseridError()}}</p>
-}
-<label>password</label>
-<input type="text" [value]="password()" (input)="password.set($any($event.target).value)" (blur)="onPasswordBlur()">
-@if(PasswordError()){
-<p style="color:red">{{PasswordError()}}</p>
-}
-<button type="button" (click)="submit()">login </button>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <input formControlName="userid" placeholder="userid">
+    @if(UseridError()){
+        <p>useridError()</p>
+    }
+    <input [type]="showPassword() ? 'text' : 'password' " formControlName="password" palceholder="password">
+    @if(PasswordError()){
+        <p>{{PasswordError()}}</p>
+    }
+    <button type="submit" >submit</button>
+</form>
