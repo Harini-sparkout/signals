@@ -1,0 +1,27 @@
+
+<h2>signalform</h2>
+
+<form (submit)="onSubmit($event)">
+
+  <input type="text" placeholder="Enter name" (input)="onNameInput($event)" (blur)="loginForm.name().markAsTouched()" />
+
+  @if (loginForm.name().touched() && loginForm.name().invalid()) {
+    <div>
+      <small style="color: red">
+        {{ loginForm.name().errors()[0]?.message }}
+      </small>
+    </div>
+  }
+<br />
+<input type="password" placeholder="Enter password" (input)="onPasswordInput($event)" (blur)="loginForm.password().markAsTouched()"/>
+ @if (loginForm.password().touched() && loginForm.password().invalid()) {
+    <div>
+      <small style="color: red">
+        {{ loginForm.password().errors()[0]?.message }}
+      </small>
+    </div>
+  }
+<br />
+<button type="submit">Submit</button>
+
+</form>
